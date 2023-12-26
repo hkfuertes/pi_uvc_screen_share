@@ -14,4 +14,5 @@ ffmpeg -probesize 100M -framerate 30 -f x11grab -video_size 1920x1080 -i :0.0+0,
 ### UVC Gadget for Raspberry PI
 ```sh
 # https://gist.github.com/justinschuldt/36469e2a89d95ef158a8c4df091e9cb4
+# https://github.com/geerlingguy/pi-webcam
 ```
