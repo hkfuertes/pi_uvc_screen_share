@@ -4,7 +4,12 @@ The idea is to create a usb gadget and show the desktop throught there
 - UVC camera, share stream via camera
 - adb protocol and scrcpy?
 
-### Caputure Desktop to dummy camera
+### Dummy Screen
+```sh
+# https://askubuntu.com/questions/453109/add-fake-display-when-no-monitor-is-plugged-in
+```
+
+### Capture Desktop to dummy camera
 ```sh
 # https://github.com/umlaeute/v4l2loopback
 # https://superuser.com/questions/411897/using-desktop-as-fake-webcam-on-linux
