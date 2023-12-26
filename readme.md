@@ -11,6 +11,11 @@ modprobe v4l2loopback
 ffmpeg -probesize 100M -framerate 30 -f x11grab -video_size 1920x1080 -i :0.0+0,0 -vcodec rawvideo -pix_fmt yuv420p -f v4l2 /dev/videoN
 ```
 
+For wayland:
+```sh
+# https://github.com/ammen99/wf-recorder/wiki
+```
+
 ### UVC Gadget for Raspberry PI
 ```sh
 # https://gist.github.com/justinschuldt/36469e2a89d95ef158a8c4df091e9cb4
