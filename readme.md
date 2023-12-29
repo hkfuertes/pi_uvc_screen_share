@@ -13,7 +13,7 @@ The idea is to create a usb gadget and show the desktop throught there
 ```sh
 # https://github.com/umlaeute/v4l2loopback
 # https://superuser.com/questions/411897/using-desktop-as-fake-webcam-on-linux
-sudo apt-get install raspberrypi-kernel-headers
+sudo apt-get install raspberrypi-kernel-headers v4l2loopback-dkms
 modprobe v4l2loopback
 ffmpeg -probesize 100M -framerate 30 -f x11grab -video_size 1920x1080 -i :0.0+0,0 -vcodec rawvideo -pix_fmt yuv420p -f v4l2 /dev/videoN
 ```
