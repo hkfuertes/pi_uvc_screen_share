@@ -28,6 +28,8 @@ For wayland:
 ```sh
 # https://gist.github.com/justinschuldt/36469e2a89d95ef158a8c4df091e9cb4
 # https://github.com/geerlingguy/pi-webcam
+modprobe usb_f_fs
+# https://www.raspberrypi.com/tutorials/plug-and-play-raspberry-pi-usb-webcam/
 ```
 
 ### Remote controlling
