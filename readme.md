@@ -42,3 +42,35 @@ sudo uvc-gadget -u /dev/video0 -v /dev/video100 -r 30
 # https://github.com/dottedmag/x2x
 # https://superuser.com/questions/322658/control-linux-console-session-keyboard-over-ssh
 ```
+
+---
+
+## Configuring from Scratch (RPIOS)
+```bash
+echo "dtoverlay=dwc2,dr_mode=otg" | sudo tee -a /boot/firmware/config.txt
+echo " modules-load=dwc2,libcomposite" | sudo tee -a /boot/cmdline.txt
+git clone https://github.com/peterbay/uvc-gadget
+cd uvc-gadget && make
+sudo cp ./uvc-gadget /usr/bin/
+sudo cp ./gadget-framebuffer.sh /usr/bin/uvcgfb
+sudo chmod +x /usr/bin/uvcgfb
+# FrameBuffer service (next block)
+sudo cp uvcgfb.service /etc/systemd/system/
+sudo systemctl enable uvcgfb.service
+
+# Manually for now!
+uvc-gadget -f /dev/fb0 -u /dev/video0
+```
+
+```service
+[Unit]
+Description=UVC Framebuffer Gadget
+
+[Service]
+ExecStart=/usr/bin/uvcgfb
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=basic.target
+```
