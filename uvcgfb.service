@@ -1,0 +1,10 @@
+[Unit]
+Description=UVC Framebuffer Gadget
+
+[Service]
+ExecStart=/usr/bin/uvcgfb
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=basic.target
