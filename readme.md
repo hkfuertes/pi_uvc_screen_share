@@ -58,9 +58,10 @@ sudo cp ./gadget-framebuffer.sh /usr/bin/uvcgfb
 sudo chmod +x /usr/bin/uvcgfb
 sudo cp uvcgfb.service /etc/systemd/system/
 sudo systemctl enable uvcgfb.service
+sudo apt install xserver-xorg-video-dummy
 
 # Start X on dummy display
 sudo startx -- -config dummy-1920x1080.conf
 # Manually for now!
-uvc-gadget -f /dev/fb0 -u /dev/video0
+sudo uvc-gadget -f /dev/fb0 -u /dev/video0
 ```
