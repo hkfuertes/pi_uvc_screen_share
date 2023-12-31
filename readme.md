@@ -56,25 +56,11 @@ cd uvc-gadget && make
 sudo cp ./uvc-gadget /usr/bin/
 sudo cp ./gadget-framebuffer.sh /usr/bin/uvcgfb
 sudo chmod +x /usr/bin/uvcgfb
-# FrameBuffer service (next block)
 sudo cp uvcgfb.service /etc/systemd/system/
 sudo systemctl enable uvcgfb.service
 
+# Start X on dummy display
+sudo startx -- -config dummy-1920x1080.conf
 # Manually for now!
 uvc-gadget -f /dev/fb0 -u /dev/video0
-```
-
-```service
-# uvcgfb.service
-
-[Unit]
-Description=UVC Framebuffer Gadget
-
-[Service]
-ExecStart=/usr/bin/uvcgfb
-StandardOutput=syslog
-StandardError=syslog
-
-[Install]
-WantedBy=basic.target
 ```
