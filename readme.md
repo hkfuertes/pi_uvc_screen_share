@@ -8,6 +8,8 @@ The idea is to create a usb gadget and show the desktop throught there
 ```sh
 # https://askubuntu.com/questions/453109/add-fake-display-when-no-monitor-is-plugged-in
 # https://forums.raspberrypi.com/viewtopic.php?t=294588
+# https://techoverflow.net/2019/02/23/how-to-run-x-server-using-xserver-xorg-video-dummy-driver-on-ubuntu/
+# https://tldp.org/HOWTO/Framebuffer-HOWTO/x1232.html
 ```
 
 ### Capture Desktop to dummy camera
