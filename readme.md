@@ -1,4 +1,3 @@
-# Display out via usb-camera
 The idea is to create a usb gadget and show the desktop throught there
 - Network gadget, share stream via local http
 - UVC camera, share stream via camera
